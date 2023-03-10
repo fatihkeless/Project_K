@@ -1,0 +1,41 @@
+
+PlayerController Scriptindeki hatalar
+
+-startta destroy(this); komutunu çaðýrdýðýmýz zaman script kendini yok eder ve PlayerControllerda yapmak istediðimiz þeyleri yapmayýz
+-startta ChangeHealt(0); methodunu çaðýrdýðýmýz zaman karakterimizin caný 0 olur ve oyunu kaybederiz. Daha doðru bir çaðýrma yöntemi ChangeHealt(100); olarak çaðýrmamýz daha doðru olur
+
+
+PlayerLook Scriptindeki hatalar
+
+-Playerlook scriptinde karakterin dönüþlerinde herhangi bir sýkýntý yok.
+-karakterin kolunuda haraket ettirmek istemiþsiniz bunu yapabilmek için karakterin riginden kolunu seçmemiz gerekiyor
+daha sonrasýnda kol haraketinde bir sýnýrlandýrma sýkýntýsý olduðunu farkettim onun için koddaki düzenlemelerime bakabilirsiniz
+
+
+
+
+Bullet Scriptindeki hatlar
+
+-bullet scriptini genel olarak doðru yazmýþsýnýz fakat bullet scriptinin bulunduðu gameobjeyi ve deðdiði enemy tagli düþmaný yok etmeyi unutmuþsunuz
+
+Sahne içindeki hatalar
+
+-PlayerControl de silahý ateþlediðimiz bullet prefabýbý prefabs klasöründen PlayerController scriptinin üzerindeki bullet yerleþtirmemiz gerekiyor
+-PlayerLook scriptinde tanýmladýðýmýz mouseSense deðiþkenini karakterin dönüþ yaptýrmak için 0 dan farklý bir deðer vermemiz gerekiyor
+-uzaylý düþmanlarýn colliderý tam modeline oturmuyor ,onu biraz düzeltmemiz gerekiyor düþmanlarýn hepsini daha kolay düzenlememiz için prefab yapýp düzenlemek daha doðru bir yöntem
+
+
+Eksik yerler
+
+-karakterimizi haraket ettirmek için characterController kullanarak bir kontrol scripti yazalým
+-oyunu kaybetme durumunda çaðýrdýðýmýz lost() methoduna Destroy(GetComponent<PlayerController>()); ekliyelim ve böylelikle oyun bittikten sonra karakter haraket etmez
+-uzaylý düþmanlarý vurup oyunu bitirmek için uzay gemisine gitmemiz gerekiyor, box collider eklemiþsiniz fakat tagini düzeltmeyi unutmuþsunuz
+-oyunu daha güzel yapmak için düþmanlara küçük bir takip kodu ekliyelim
+-oyuna heal obeleri ile temas ettiðimizde can yükselmesini eklemiþiz ama oyuna eklemeyi unutmuþuz onu ekleyip tagini ve colliderlarýný ayarlýyalým
+
+
+
+Sahneyi daha kullanýþlý yapmak için öneriler
+
+-rifflestart yerini daha iyi anlayabilmek için inspectordan select icon veya gizmos draw eklemeliyiz
+-klasörleri kullanmak projeyi daha düzenli ve bir þeyleri ararken daha kolay bulmamýzý saðlar
